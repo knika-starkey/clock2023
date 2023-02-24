@@ -14,18 +14,17 @@
   <body>
     <canvas id="ship" width="500" height="500"> </canvas>
     <script>
+      let x = 0;
       window.onload = function () {
         let drawingCanvas = document.getElementById("ship");
         if (drawingCanvas && drawingCanvas.getContext) {
           let canvas = document.getElementById("myCanvas");
-          var context = drawingCanvas.getContext("2d");
-
-          // Body of the fish
+          let context = drawingCanvas.getContext("2d");
           context.beginPath();
           context.fillStyle = "orange";
-          context.moveTo(200, 150);
-          context.quadraticCurveTo(250, 100, 300, 150);
-          context.quadraticCurveTo(250, 200, 200, 150);
+          context.moveTo(x + 100, 150);
+          context.quadraticCurveTo(x + 50, 100, x + 0, 150);
+          context.quadraticCurveTo(x + 50, 200, x + 100, 150);
           context.fill();
 
           // context.beginPath();
@@ -36,41 +35,41 @@
           // Eye of the fish
           context.beginPath();
           context.fillStyle = "white";
-          context.arc(270, 150, 10, 0, Math.PI * 2, true);
+          context.arc(x + 30, 150, 10, 0, Math.PI * 2, true);
           context.fill();
 
           context.beginPath();
           context.fillStyle = "black";
-          context.arc(270, 150, 5, 0, Math.PI * 2, true);
+          context.arc(x + 30, 150, 5, 0, Math.PI * 2, true);
           context.fill();
 
           // Tail of the fish
           context.beginPath();
           context.fillStyle = "gold";
-          context.moveTo(200, 150);
-          context.quadraticCurveTo(190, 120, 170, 140);
-          context.quadraticCurveTo(190, 160, 200, 150);
+          context.moveTo(x + 100, 150);
+          context.quadraticCurveTo(x + 110, 120, x + 130, 140);
+          context.quadraticCurveTo(x + 110, 160, x + 100, 150);
           context.fill();
 
           context.beginPath();
           context.fillStyle = "gold";
-          context.moveTo(200, 150);
-          context.quadraticCurveTo(190, 140, 170, 160);
-          context.quadraticCurveTo(190, 180, 200, 150);
+          context.moveTo(x + 100, 150);
+          context.quadraticCurveTo(x + 110, 140, x + 130, 160);
+          context.quadraticCurveTo(x + 110, 180, x + 100, 150);
           context.fill();
 
           context.beginPath();
           context.fillStyle = "gold";
-          context.moveTo(260, 160);
-          context.quadraticCurveTo(250, 150, 230, 170);
-          context.quadraticCurveTo(250, 190, 260, 160);
+          context.moveTo(x + 40, 160);
+          context.quadraticCurveTo(x + 50, 150, x + 70, 170);
+          context.quadraticCurveTo(x + 50, 190, x + 40, 160);
           context.fill();
 
           context.beginPath();
           context.fillStyle = "gold";
-          context.moveTo(260, 125);
-          context.quadraticCurveTo(230, 125, 230, 130);
-          context.quadraticCurveTo(230, 95, 270, 130);
+          context.moveTo(x + 40, 125);
+          context.quadraticCurveTo(x + 70, 125, x + 70, 130);
+          context.quadraticCurveTo(x + 70, 95, x + 30, 130);
           context.fill();
         }
       };
