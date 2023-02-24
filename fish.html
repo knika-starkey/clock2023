@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="ship" width="500" height="500"> </canvas>
+    <script>
+      window.onload = function () {
+        let drawingCanvas = document.getElementById("ship");
+        if (drawingCanvas && drawingCanvas.getContext) {
+          let canvas = document.getElementById("myCanvas");
+          var context = drawingCanvas.getContext("2d");
+
+          // Body of the fish
+          context.beginPath();
+          context.fillStyle = "orange";
+          context.moveTo(200, 150);
+          context.quadraticCurveTo(250, 100, 300, 150);
+          context.quadraticCurveTo(250, 200, 200, 150);
+          context.fill();
+
+          // context.beginPath();
+          // context.strokeStyle = "brown";
+          // context.arc(230, 150, 10, Math.PI, 2 * Math.PI);
+          // context.stroke();
+
+          // Eye of the fish
+          context.beginPath();
+          context.fillStyle = "white";
+          context.arc(270, 150, 10, 0, Math.PI * 2, true);
+          context.fill();
+
+          context.beginPath();
+          context.fillStyle = "black";
+          context.arc(270, 150, 5, 0, Math.PI * 2, true);
+          context.fill();
+
+          // Tail of the fish
+          context.beginPath();
+          context.fillStyle = "gold";
+          context.moveTo(200, 150);
+          context.quadraticCurveTo(190, 120, 170, 140);
+          context.quadraticCurveTo(190, 160, 200, 150);
+          context.fill();
+
+          context.beginPath();
+          context.fillStyle = "gold";
+          context.moveTo(200, 150);
+          context.quadraticCurveTo(190, 140, 170, 160);
+          context.quadraticCurveTo(190, 180, 200, 150);
+          context.fill();
+
+          context.beginPath();
+          context.fillStyle = "gold";
+          context.moveTo(260, 160);
+          context.quadraticCurveTo(250, 150, 230, 170);
+          context.quadraticCurveTo(250, 190, 260, 160);
+          context.fill();
+
+          context.beginPath();
+          context.fillStyle = "gold";
+          context.moveTo(260, 125);
+          context.quadraticCurveTo(230, 125, 230, 130);
+          context.quadraticCurveTo(230, 95, 270, 130);
+          context.fill();
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -15,9 +15,9 @@
     >
     </canvas>
     <script>
-      var canvas = document.getElementById("canvas");
-      var ctx = canvas.getContext("2d");
-      var radius = canvas.height / 2;
+      let canvas = document.getElementById("canvas");
+      let ctx = canvas.getContext("2d");
+      let radius = canvas.height / 2;
       ctx.translate(radius, radius);
       radius = radius * 0.9;
 
@@ -41,8 +41,8 @@
 
       // рисование  чисел
       function drawNumbers(ctx, radius) {
-        var ang;
-        var num;
+        let ang;
+        let num;
         ctx.fillStyle = "brown";
         ctx.font = radius * 0.15 + "px arial";
         ctx.textBaseline = "middle";
@@ -61,10 +61,10 @@
 
       // определение времени
       function drawTime(ctx, radius) {
-        var now = new Date();
-        var hour = now.getHours();
-        var minute = now.getMinutes();
-        var second = now.getSeconds();
+        let now = new Date();
+        let hour = now.getHours();
+        let minute = now.getMinutes();
+        let second = now.getSeconds();
         // часы
         hour = hour % 12;
         hour =
