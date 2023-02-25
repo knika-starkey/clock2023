@@ -18,59 +18,41 @@
       window.onload = function () {
         let drawingCanvas = document.getElementById("ship");
         if (drawingCanvas && drawingCanvas.getContext) {
-          let canvas = document.getElementById("myCanvas");
-          let context = drawingCanvas.getContext("2d");
-          context.beginPath();
-          context.fillStyle = "orange";
-          context.moveTo(x + 100, 150);
-          context.quadraticCurveTo(x + 50, 100, x + 0, 150);
-          context.quadraticCurveTo(x + 50, 200, x + 100, 150);
-          context.fill();
+          var canvas = document.createElement("canvas");
+          canvas.width = 400;
+          canvas.height = 400;
+          document.body.appendChild(canvas);
 
-          // context.beginPath();
-          // context.strokeStyle = "brown";
-          // context.arc(230, 150, 10, Math.PI, 2 * Math.PI);
-          // context.stroke();
+          // Get the drawing context
+          var ctx = canvas.getContext("2d");
 
-          // Eye of the fish
-          context.beginPath();
-          context.fillStyle = "white";
-          context.arc(x + 30, 150, 10, 0, Math.PI * 2, true);
-          context.fill();
+          // Set the center point and radius of the sun
+          var centerX = canvas.width / 2;
+          var centerY = canvas.height / 2;
+          var radius = 100;
 
-          context.beginPath();
-          context.fillStyle = "black";
-          context.arc(x + 30, 150, 5, 0, Math.PI * 2, true);
-          context.fill();
+          // Draw the sun
+          ctx.beginPath();
+          ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+          ctx.fillStyle = "yellow";
+          ctx.fill();
+          ctx.closePath();
 
-          // Tail of the fish
-          context.beginPath();
-          context.fillStyle = "gold";
-          context.moveTo(x + 100, 150);
-          context.quadraticCurveTo(x + 110, 120, x + 130, 140);
-          context.quadraticCurveTo(x + 110, 160, x + 100, 150);
-          context.fill();
-
-          context.beginPath();
-          context.fillStyle = "gold";
-          context.moveTo(x + 100, 150);
-          context.quadraticCurveTo(x + 110, 140, x + 130, 160);
-          context.quadraticCurveTo(x + 110, 180, x + 100, 150);
-          context.fill();
-
-          context.beginPath();
-          context.fillStyle = "gold";
-          context.moveTo(x + 40, 160);
-          context.quadraticCurveTo(x + 50, 150, x + 70, 170);
-          context.quadraticCurveTo(x + 50, 190, x + 40, 160);
-          context.fill();
-
-          context.beginPath();
-          context.fillStyle = "gold";
-          context.moveTo(x + 40, 125);
-          context.quadraticCurveTo(x + 70, 125, x + 70, 130);
-          context.quadraticCurveTo(x + 70, 95, x + 30, 130);
-          context.fill();
+          // Draw the sun rays
+          // for (var i = 0; i < 8; i++) {
+          //   var angle = (i * Math.PI) / 4;
+          //   var startX = centerX + radius * Math.cos(angle);
+          //   var startY = centerY + radius * Math.sin(angle);
+          //   var endX = centerX + (radius + 50) * Math.cos(angle);
+          //   var endY = centerY + (radius + 50) * Math.sin(angle);
+          //   ctx.strokeStyle = "yellow";
+          //   ctx.lineWidth = 5;
+          //   ctx.beginPath();
+          //   ctx.moveTo(startX, startY);
+          //   ctx.lineTo(endX, endY);
+          //   ctx.stroke();
+          //   ctx.closePath();
+          // }
         }
       };
     </script>
